@@ -10,9 +10,10 @@ const safeUrl = (value) => {
   }
 };
 
-const isLikelyEmail = (value) => {
-  if (typeof value !== 'string') return false;
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+const extractEmail = (value) => {
+  if (typeof value !== 'string') return null;
+  const match = value.trim().match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+  return match ? match[0] : null;
 };
 
 const render = (data) => {
@@ -37,11 +38,14 @@ const render = (data) => {
   contact.replaceChildren();
   Object.entries(data.contact).forEach(([label, value]) => {
     const normalizedLabel = label.trim().toLowerCase();
+    const email = extractEmail(value);
+    const isEmailField = normalizedLabel.includes('email') || Boolean(email);
+
     const item = document.createElement('li');
     const link = document.createElement('a');
     link.textContent = value;
 
-    const href = normalizedLabel === 'email' || isLikelyEmail(value) ? `mailto:${value}` : value;
+    const href = isEmailField ? (email ? `mailto:${email}` : '#') : value;
     link.href = safeUrl(href);
 
     item.append(`${label}: `, link);
