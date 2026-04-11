@@ -12,7 +12,7 @@ const safeUrl = (value) => {
 
 const extractEmail = (value) => {
   if (typeof value !== 'string') return null;
-  const match = value.trim().match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z0-9-]{2,63}/i);
+  const match = value.trim().match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}/i);
   return match ? match[0] : null;
 };
 
@@ -56,7 +56,8 @@ const render = (data) => {
 fetch('./portfolio.json')
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`Could not load portfolio.json: ${response.status} ${response.statusText}. Ensure portfolio.json exists in the same directory as index.html.`);
+      const hint = response.status === 404 ? ' Ensure portfolio.json exists in the same directory as index.html.' : '';
+      throw new Error(`Could not load portfolio.json: ${response.status} ${response.statusText}.${hint}`);
     }
     return response.json();
   })
