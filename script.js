@@ -12,7 +12,7 @@ const safeUrl = (value) => {
 
 const extractEmail = (value) => {
   if (typeof value !== 'string') return null;
-  const match = value.trim().match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+  const match = value.trim().match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z0-9-]{2,63}/i);
   return match ? match[0] : null;
 };
 
