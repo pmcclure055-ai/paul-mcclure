@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hero {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(120deg, #5a67d8, #805ad5);
+  color: #fff;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.5rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+a {
+  color: inherit;
+}

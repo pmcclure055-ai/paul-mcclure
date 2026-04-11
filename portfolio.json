@@ -1,0 +1,22 @@
+{
+  "name": "Pat McClure",
+  "headline": "Builder • Problem Solver • Lifelong Learner",
+  "about": "I build practical software and keep improving through hands-on projects.",
+  "projects": [
+    {
+      "title": "Project One",
+      "description": "A short description of what this project does.",
+      "url": "https://example.com/project-one"
+    },
+    {
+      "title": "Project Two",
+      "description": "Another project description goes here.",
+      "url": "https://example.com/project-two"
+    }
+  ],
+  "contact": {
+    "Email": "you@example.com",
+    "GitHub": "https://github.com/your-username",
+    "LinkedIn": "https://www.linkedin.com/in/your-profile"
+  }
+}
