@@ -236,22 +236,29 @@ form textarea {
 /* Resume page specific nav */
 .navbar {
     border-bottom: 1px solid #000;
-    padding: 1rem 0;
+    padding: 1.15rem 0;
 }
 
 .nav-container {
-    max-width: 1100px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+}
+
+.navbar .logo {
+    margin-right: clamp(3rem, 8vw, 7rem);
+    line-height: 1;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.25rem;
+    gap: 2.25rem;
+    margin-left: auto;
+    align-items: center;
+    padding-bottom: 2px;
 }
 
 .nav-links a {
@@ -265,7 +272,7 @@ form textarea {
 }
 
 .resume-content {
-    max-width: 1000px;
+    max-width: 960px;
     margin: 40px auto;
     padding: 0 20px;
 }
