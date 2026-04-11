@@ -1,2 +1,2 @@
-# pail-mcclure
+# paul-mcclure
 portfolio
