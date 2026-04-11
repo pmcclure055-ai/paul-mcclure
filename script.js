@@ -31,11 +31,12 @@ const render = (data) => {
   const contact = document.getElementById('contact');
   contact.replaceChildren();
   Object.entries(data.contact).forEach(([label, value]) => {
+    const normalizedLabel = label.trim().toLowerCase();
     const item = document.createElement('li');
     const link = document.createElement('a');
     link.textContent = value;
 
-    const href = label.toLowerCase() === 'email' ? `mailto:${value}` : value;
+    const href = normalizedLabel === 'email' ? `mailto:${value}` : value;
     link.href = safeUrl(href);
 
     item.append(`${label}: `, link);
@@ -46,7 +47,7 @@ const render = (data) => {
 fetch('./portfolio.json')
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`Could not load portfolio data: ${response.status}`);
+      throw new Error(`Could not load portfolio.json: ${response.status} ${response.statusText}. Ensure portfolio.json exists next to index.html.`);
     }
     return response.json();
   })
