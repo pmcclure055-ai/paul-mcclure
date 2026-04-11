@@ -10,6 +10,11 @@ const safeUrl = (value) => {
   }
 };
 
+const isLikelyEmail = (value) => {
+  if (typeof value !== 'string') return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+};
+
 const render = (data) => {
   document.getElementById('name').textContent = data.name;
   document.getElementById('headline').textContent = data.headline;
@@ -36,7 +41,7 @@ const render = (data) => {
     const link = document.createElement('a');
     link.textContent = value;
 
-    const href = normalizedLabel === 'email' ? `mailto:${value}` : value;
+    const href = normalizedLabel === 'email' || isLikelyEmail(value) ? `mailto:${value}` : value;
     link.href = safeUrl(href);
 
     item.append(`${label}: `, link);
@@ -47,7 +52,7 @@ const render = (data) => {
 fetch('./portfolio.json')
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`Could not load portfolio.json: ${response.status} ${response.statusText}. Ensure portfolio.json exists next to index.html.`);
+      throw new Error(`Could not load portfolio.json: ${response.status} ${response.statusText}. Ensure portfolio.json exists in the same directory as index.html.`);
     }
     return response.json();
   })
