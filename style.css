@@ -56,18 +56,19 @@ nav ul li a:hover {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 2.5rem;
     padding: 80px 10%;
     min-height: 65vh;
 }
 
-.hero-text,
-.hero-image {
-    flex: 1 1 45%;
+.hero-text {
+    flex: 1 1 60%;
     min-width: 280px;
 }
 
 .hero-image {
+    flex: 0 0 320px;
+    min-width: 260px;
     display: flex;
     justify-content: center;
 }
@@ -102,7 +103,7 @@ nav ul li a:hover {
 
 .profile-img {
     width: 100%;
-    max-width: 420px;
+    max-width: 320px;
     height: auto;
 }
 
