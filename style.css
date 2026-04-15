@@ -54,15 +54,20 @@ nav ul li a:hover {
 /* Hero (index) */
 .hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
     padding: 80px 10%;
     min-height: 65vh;
 }
 
+.hero-text,
 .hero-image {
-    flex: 1;
+    flex: 1 1 45%;
+    min-width: 280px;
+}
+
+.hero-image {
     display: flex;
     justify-content: center;
 }
@@ -97,7 +102,7 @@ nav ul li a:hover {
 
 .profile-img {
     width: 100%;
-    max-width: 650px;
+    max-width: 900px;
     height: auto;
 }
 
