@@ -193,16 +193,17 @@ footer,
 /* About page */
 .about-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 60px;
-    padding: 70px 10%;
+    gap: 50px;
+    padding: 60px 10%;
     max-width: 1280px;
     margin: 0 auto;
 }
 
 .about-text {
-    flex: 1.2;
+    flex: 1 1 55%;
+    min-width: 280px;
 }
 
 .about-text h1 {
@@ -265,15 +266,18 @@ footer,
 }
 
 .about-image {
-    flex: 0.8;
+    flex: 0 0 380px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.about-image .profile-img {
-    max-width: 280px;
+.about-photo {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
     border-radius: 8px;
+    border: 2px solid #000;
 }
 
 /* Contact page */
