@@ -73,7 +73,7 @@ nav ul li a:hover {
     align-items: flex-start;
     justify-content: space-between;
     gap: 2.5rem;
-    padding: 50px 10%;
+    padding: 30px 10%;
     min-height: auto;
 }
 
@@ -92,13 +92,13 @@ nav ul li a:hover {
 .hero-text h1 {
     font-size: clamp(2rem, 4vw, 3.4rem);
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .hero-text p {
     max-width: 620px;
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .btn,
@@ -120,28 +120,28 @@ nav ul li a:hover {
 /* Skills Highlights Section */
 .skills-highlights {
     background-color: #f8f8f8;
-    padding: 30px 10%;
+    padding: 25px 10%;
     text-align: center;
-    margin-top: -20px;
+    margin-top: -40px;
 }
 
 .skills-highlights h2 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 0.8rem;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .skill-card {
     background-color: #fff;
-    padding: 1.1rem;
+    padding: 0.9rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -153,13 +153,13 @@ nav ul li a:hover {
 }
 
 .skill-card h3 {
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
     font-weight: 700;
 }
 
 .skill-card p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #666;
 }
 
