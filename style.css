@@ -120,8 +120,9 @@ nav ul li a:hover {
 /* Skills Highlights Section */
 .skills-highlights {
     background-color: #f8f8f8;
-    padding: 40px 10%;
+    padding: 30px 10%;
     text-align: center;
+    margin-top: -20px;
 }
 
 .skills-highlights h2 {
@@ -132,15 +133,15 @@ nav ul li a:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .skill-card {
     background-color: #fff;
-    padding: 1.3rem;
+    padding: 1.1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -152,13 +153,13 @@ nav ul li a:hover {
 }
 
 .skill-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
     font-weight: 700;
 }
 
 .skill-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
 }
 
