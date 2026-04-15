@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <script>
+        function downloadPDF() {
+            const link = document.createElement('a');
+            link.href = 'path/to/your/resume.pdf'; // Update with actual file path
+            link.download = 'resume.pdf';
+            link.click();
+        }
+    </script>
+</head>
+<body>
+    <h1>Paul McClure's Resume</h1>
+    <button onclick="downloadPDF()">Download Resume</button>
+</body>
+</html>

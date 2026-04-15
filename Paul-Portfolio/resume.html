@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Paul McClure</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -26,62 +27,64 @@
             <a href="Paul_McClure_Resume_Bold_Professional.pdf" download="Paul_McClure_Resume_Bold_Professional.pdf" class="download-btn">Download PDF</a>
         </header>
 
-        <section class="resume-section">
-            <div class="section-title">
-                <h2>Education</h2>
-            </div>
-            <div class="section-details">
-                    <article class="resume-item">
-                        <h3 class="entry-header">Front Range Community College</h3>
-                        <p class="entry-meta">Associate of Science in Science | 2024</p>
-                    </article>
-                    <article class="resume-item">
-                        <h3 class="entry-header">Colorado State University</h3>
-                        <p class="entry-meta">Bachelor of Science in Computer Science | 2029 (Expected)</p>
-                    </article>
+        <div id="resumeContent">
+            <section class="resume-section">
+                <div class="section-title">
+                    <h2>Education</h2>
                 </div>
+                <div class="section-details">
+                        <article class="resume-item">
+                            <h3 class="entry-header">Front Range Community College</h3>
+                            <p class="entry-meta">Associate of Science in Science | 2024</p>
+                        </article>
+                        <article class="resume-item">
+                            <h3 class="entry-header">Colorado State University</h3>
+                            <p class="entry-meta">Bachelor of Science in Computer Science | 2029 (Expected)</p>
+                        </article>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <section class="resume-section">
+                    <div class="section-title">
+                        <h2>Work Experience</h2>
+                    </div>
+                    <div class="section-details">
+                        <article class="resume-item">
+                            <h3 class="entry-header">CooperSmith's Pub & Brewing</h3>
+                            <p class="entry-meta">Kitchen Manager, Cook | 1998 - 2006</p>
+                        </article>
+                        <article class="resume-item">
+                            <h3 class="entry-header">Whole Foods Market</h3>
+                            <p class="entry-meta">Team Member, Supervisor | 2007 - Present</p>
+                        </article>
+                    </div>
             </section>
 
             <hr class="divider">
 
             <section class="resume-section">
                 <div class="section-title">
-                    <h2>Work Experience</h2>
+                    <h2>Skills & Interests</h2>
                 </div>
                 <div class="section-details">
-                    <article class="resume-item">
-                        <h3 class="entry-header">CooperSmith's Pub &amp; Brewing</h3>
-                        <p class="entry-meta">Kitchen Manager, Cook | 1998 - 2006</p>
-                    </article>
-                    <article class="resume-item">
-                        <h3 class="entry-header">Whole Foods Market</h3>
-                        <p class="entry-meta">Team Member, Supervisor | 2007 - Present</p>
-                    </article>
+                    <div class="skill-group">
+                        <strong>Skills:</strong>
+                        <ul class="bullet-list">
+                            <li>Experience with various programming languages: Java, Python, HTML/CSS</li>
+                            <li>Strong problem-solving and analytical skills</li>
+                            <li>Excellent communication and teamwork abilities</li>
+                            <li>Passion for learning and staying up-to-date with industry trends</li>
+                        </ul>
+                    </div>
+                    <div class="interest-group">
+                        <strong>Interests:</strong>
+                        <p>In my free time, I enjoy biking with my family, hiking, swimming, music, and exploring new technologies.</p>
+                    </div>
                 </div>
-        </section>
-
-        <hr class="divider">
-
-        <section class="resume-section">
-            <div class="section-title">
-                <h2>Skills & Interests</h2>
-            </div>
-            <div class="section-details">
-                <div class="skill-group">
-                    <strong>Skills:</strong>
-                    <ul class="bullet-list">
-                        <li>Experience with various programming languages: Java, Python, HTML/CSS</li>
-                        <li>Strong problem-solving and analytical skills</li>
-                        <li>Excellent communication and teamwork abilities</li>
-                        <li>Passion for learning and staying up-to-date with industry trends</li>
-                    </ul>
-                </div>
-                <div class="interest-group">
-                    <strong>Interests:</strong>
-                    <p>In my free time, I enjoy biking with my family, hiking, swimming, music, and exploring new technologies.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
@@ -90,5 +93,21 @@
         </div>
         <p>&copy; 2026 Paul McClure. All rights reserved.</p>
     </footer>
+
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('resumeContent');
+            const opt = {
+                margin: 10,
+                filename: 'Paul_McClure_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+
 </body>
 </html>
