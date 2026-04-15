@@ -73,8 +73,8 @@ nav ul li a:hover {
     align-items: flex-start;
     justify-content: space-between;
     gap: 2.5rem;
-    padding: 80px 10%;
-    min-height: 65vh;
+    padding: 50px 10%;
+    min-height: auto;
 }
 
 .hero-text {
