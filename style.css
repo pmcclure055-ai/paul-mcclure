@@ -202,7 +202,7 @@ footer,
 }
 
 .about-text {
-    flex: 1 1 55%;
+    flex: 1 1 50%;
     min-width: 280px;
 }
 
@@ -298,7 +298,7 @@ footer,
 }
 
 .about-image {
-    flex: 0 0 340px;
+    flex: 1 1 50%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -306,7 +306,7 @@ footer,
 
 .about-photo {
     width: 100%;
-    max-width: 340px;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
     border: 2px solid #000;
