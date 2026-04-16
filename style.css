@@ -193,16 +193,16 @@ footer,
 /* About page */
 .about-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 72px;
+    gap: 96px;
     padding: 62px 10% 36px 10%;
     max-width: 1280px;
     margin: 0 auto;
 }
 
 .about-text {
-    flex: 1 1 56%;
+    flex: 1 1 58%;
     min-width: 280px;
 }
 
@@ -219,7 +219,7 @@ footer,
 }
 
 .about-skills {
-    padding: 26px 10% 50px 10%;
+    padding: 30px 10% 50px 10%;
     border-top: 1px solid #000;
     max-width: 1280px;
     margin: 0 auto;
@@ -234,40 +234,24 @@ footer,
     color: #111;
 }
 
-.about-skills .skills-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-}
-
-.about-skills .skill-item {
-    background-color: #f6f6f6;
-    border: 1px solid #cfcfcf;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.about-skills .skill-item:hover {
-    background-color: #000;
-    color: #fff;
+.about-skills .skills-grid {
+    max-width: none;
+    margin: 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
 }
 
 .about-image {
-    flex: 1 1 44%;
+    flex: 1 1 42%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 0.75rem;
+    align-items: center;
+    padding-top: 0;
 }
 
 .about-photo {
     width: 100%;
-    max-width: 420px;
+    max-width: 390px;
     height: auto;
     border-radius: 8px;
     border: 2px solid #000;
@@ -471,8 +455,9 @@ form textarea {
         gap: 35px;
     }
 
-    .about-skills .skills-list {
+    .about-skills .skills-grid {
         justify-content: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .profile-img {
@@ -499,6 +484,10 @@ form textarea {
     }
 
     .resume-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-skills .skills-grid {
         grid-template-columns: 1fr;
     }
 }
