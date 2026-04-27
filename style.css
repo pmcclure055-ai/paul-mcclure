@@ -1,4 +1,44 @@
 /* Base */
+:root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --text: #111111;
+    --border: #000000;
+    --muted: #666666;
+    --muted-strong: #444444;
+    --surface: #f8f8f8;
+    --surface-strong: #ffffff;
+    --surface-border: #dddddd;
+    --surface-subtle: #e8e8e8;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --button-hover: #333333;
+    --panel-gradient-start: #ffffff;
+    --panel-gradient-end: #f4f4f4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --focus-ring: #0a66d0;
+}
+
+html[data-theme="contrast"] {
+    color-scheme: dark;
+    --bg: #000000;
+    --text: #ffffff;
+    --border: #ffffff;
+    --muted: #f0f0f0;
+    --muted-strong: #e3e3e3;
+    --surface: #080808;
+    --surface-strong: #000000;
+    --surface-border: #ffffff;
+    --surface-subtle: #ffffff;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --button-hover: #d9d9d9;
+    --panel-gradient-start: #000000;
+    --panel-gradient-end: #101010;
+    --shadow-color: rgba(255, 255, 255, 0.18);
+    --focus-ring: #ffde59;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +48,25 @@
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
-    background-color: #ffffff;
-    color: #111111;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 a {
     color: inherit;
 }
 
-/* Shared top navigation used on index/about/contact */
-header {
-    border-bottom: 1px solid #000;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+/* Shared top navigation used on index/about/contact/resume */
+body > header {
+    border-bottom: 1px solid var(--border);
     padding: 1.25rem 5%;
 }
 
@@ -34,6 +82,13 @@ nav > div {
     flex-direction: column;
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
 .logo {
     font-size: 1.45rem;
     font-weight: 700;
@@ -44,7 +99,7 @@ nav > div {
 
 .site-tagline {
     font-size: 0.7rem;
-    color: #666;
+    color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin: 0;
@@ -63,8 +118,52 @@ nav ul li a {
     transition: opacity 0.25s ease;
 }
 
+nav ul li a.active {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
 nav ul li a:hover {
     opacity: 0.65;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--border);
+    background-color: var(--surface-strong);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.theme-toggle-state {
+    min-width: 2.2rem;
+    text-align: center;
+    padding: 0.15rem 0.4rem;
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.theme-toggle[aria-pressed="true"] {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-state {
+    background-color: var(--surface-strong);
+    color: var(--text);
 }
 
 /* Hero (index) */
@@ -105,7 +204,7 @@ nav ul li a:hover {
 .cta-buttons a {
     display: inline-block;
     padding: 0.65rem 1.1rem;
-    border: 1px solid #000;
+    border: 1px solid var(--border);
     text-decoration: none;
     font-weight: 700;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -113,13 +212,13 @@ nav ul li a:hover {
 
 .btn:hover,
 .cta-buttons a:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--button-text);
 }
 
 /* Skills Highlights Section */
 .skills-highlights {
-    background-color: #f8f8f8;
+    background-color: var(--surface);
     padding: 25px 10%;
     text-align: center;
     margin-top: 0;
@@ -140,16 +239,16 @@ nav ul li a:hover {
 }
 
 .skill-card {
-    background-color: #fff;
+    background-color: var(--surface-strong);
     padding: 0.9rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--surface-border);
     border-radius: 8px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .skill-card h3 {
@@ -160,7 +259,7 @@ nav ul li a:hover {
 
 .skill-card p {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--muted);
 }
 
 .profile-img {
@@ -172,7 +271,7 @@ nav ul li a:hover {
 /* Shared footer */
 footer,
 .footer {
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--border);
     text-align: center;
     margin-top: 50px;
     padding: 2rem 5%;
@@ -220,7 +319,7 @@ footer,
 
 .about-skills {
     padding: 30px 10% 50px 10%;
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--border);
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -231,7 +330,7 @@ footer,
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 1.2rem;
-    color: #111;
+    color: var(--text);
 }
 
 .about-skills .skills-grid {
@@ -254,7 +353,7 @@ footer,
     max-width: 390px;
     height: auto;
     border-radius: 8px;
-    border: 2px solid #000;
+    border: 2px solid var(--border);
 }
 
 /* Contact page */
@@ -290,14 +389,16 @@ form textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 0.65rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--surface-border);
+    background-color: var(--surface-strong);
+    color: var(--text);
     font-family: inherit;
     font-size: 1rem;
 }
 
 .send-btn {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     padding: 0.7rem 1.1rem;
     font-weight: 700;
@@ -305,7 +406,7 @@ form textarea {
 }
 
 .send-btn:hover {
-    background-color: #333;
+    background-color: var(--button-hover);
 }
 
 .contact-column-image {
@@ -318,45 +419,58 @@ form textarea {
     width: min(100%, 480px);
     height: auto;
     border-radius: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--surface-border);
 }
 
-/* Resume page specific nav */
-.navbar {
-    border-bottom: 1px solid #000;
-    padding: 1.15rem 0;
+/* Projects page */
+.projects-page {
+    padding: 64px 10% 72px 10%;
 }
 
-.nav-container {
-    max-width: 960px;
+.projects-panel {
+    max-width: 760px;
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: flex-end;
+    border: 1px solid var(--border);
+    padding: 40px clamp(24px, 5vw, 48px);
+    background: linear-gradient(135deg, var(--panel-gradient-start) 0%, var(--panel-gradient-end) 100%);
 }
 
-.navbar .logo {
-    margin-right: clamp(3rem, 8vw, 7rem);
-    line-height: 1;
+.projects-kicker {
+    display: inline-block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2.25rem;
-    margin-left: auto;
-    align-items: center;
-    padding-bottom: 2px;
+.projects-panel h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
 }
 
-.nav-links a {
-    text-decoration: none;
-    font-weight: 500;
+.projects-panel p {
+    font-size: 1.05rem;
+    max-width: 56ch;
+    margin-bottom: 1rem;
 }
 
-.nav-links a.active {
-    text-decoration: underline;
+.construction-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--border);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font: inherit;
     font-weight: 700;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.projects-note {
+    margin-top: 1rem;
+    color: var(--muted-strong);
 }
 
 .resume-content {
@@ -379,8 +493,8 @@ form textarea {
 }
 
 .download-btn {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     padding: 10px 18px;
     font-weight: 700;
@@ -388,12 +502,12 @@ form textarea {
 }
 
 .download-btn:hover {
-    background-color: #333;
+    background-color: var(--button-hover);
 }
 
 .divider {
     border: 0;
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--border);
     margin: 28px 0;
 }
 
@@ -415,7 +529,7 @@ form textarea {
 }
 
 .resume-item {
-    border-left: 2px solid #e8e8e8;
+    border-left: 2px solid var(--surface-subtle);
     padding-left: 12px;
 }
 
@@ -425,7 +539,7 @@ form textarea {
 }
 
 .entry-meta {
-    color: #444;
+    color: var(--muted-strong);
     margin-top: 2px;
 }
 
@@ -468,19 +582,39 @@ form textarea {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
+        align-items: center;
         gap: 0.75rem;
+        text-align: center;
     }
 
-    nav ul,
-    .nav-links {
+    nav > div {
+        align-items: center;
+    }
+
+    .nav-controls {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .site-tagline {
+        max-width: 32ch;
+    }
+
+    nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.8rem;
+        width: 100%;
     }
 
     .resume-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .projects-page {
+        padding: 40px 6% 56px 6%;
     }
 
     .resume-section {
