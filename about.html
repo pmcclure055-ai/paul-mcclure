@@ -9,8 +9,10 @@
     <script src="theme-toggle.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header>
-        <nav>
+        <nav aria-label="Primary">
             <div>
                 <div class="logo">Paul McClure</div>
                 <p class="site-tagline">Web developer &amp; Colorado State University Computer Science student</p>
@@ -18,7 +20,7 @@
             <div class="nav-controls">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="about.html" class="active" aria-current="page">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -30,7 +32,7 @@
             </div>
         </nav>
     </header>
-    <main class="about-page">
+    <main id="main-content" class="about-page">
         <div class="about-container">
             <section class="about-text">
                 <h1>About Me</h1>

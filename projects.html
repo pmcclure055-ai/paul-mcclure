@@ -8,9 +8,10 @@
     <script src="theme-toggle.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
-        <nav>
+        <nav aria-label="Primary">
             <div>
                 <div class="logo">Paul McClure</div>
                 <p class="site-tagline">Web developer &amp; Colorado State University Computer Science student</p>
@@ -19,7 +20,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -31,13 +32,43 @@
         </nav>
     </header>
 
-    <main class="projects-page">
+    <main id="main-content" class="projects-page">
         <section class="projects-panel">
-            <span class="projects-kicker">Work In Progress</span>
-            <h1>Projects are still compiling.</h1>
-            <p>This page is under construction while I package current coursework, experiments, and shipped work into case studies worth reading.</p>
-            <button type="button" class="construction-btn" disabled>Fresh builds landing soon</button>
-            <p class="projects-note">Until then, the rest of the site has the essentials: my background, resume, and contact information.</p>
+            <span class="projects-kicker">Featured Work</span>
+            <h1>Projects I am actively building.</h1>
+            <p>These are current portfolio projects that highlight responsive design, front-end fundamentals, and practical accessibility improvements.</p>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <h2>Portfolio Site Refresh</h2>
+                    <p>A multi-page portfolio rebuilt with consistent navigation, responsive layouts, and a shared design system.</p>
+                    <p class="project-meta"><strong>Stack:</strong> HTML, CSS, GitHub Pages</p>
+                    <div class="project-links">
+                        <a href="index.html" class="project-link">View Live</a>
+                        <a href="https://github.com/pmcclure055-ai/paul-mcclure" target="_blank" rel="noopener noreferrer" class="project-link">Source Code</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h2>Accessible Theme Toggle</h2>
+                    <p>A reusable high-contrast mode with keyboard focus styling, persistent preferences, and mobile-friendly controls.</p>
+                    <p class="project-meta"><strong>Focus:</strong> Accessibility, usability, contrast</p>
+                    <div class="project-links">
+                        <a href="projects.html" class="project-link">See It In Action</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h2>Resume Download Experience</h2>
+                    <p>A dedicated resume page with clean section structure, readable hierarchy, and downloadable PDF support.</p>
+                    <p class="project-meta"><strong>Focus:</strong> Content hierarchy and clarity</p>
+                    <div class="project-links">
+                        <a href="resume.html" class="project-link">View Resume Page</a>
+                    </div>
+                </article>
+            </div>
+
+            <p class="projects-note">More coursework and in-progress builds will be added here as I complete and document them.</p>
         </section>
     </main>
 

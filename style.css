@@ -56,6 +56,35 @@ a {
     color: inherit;
 }
 
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 1000;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--border);
+    background-color: var(--surface-strong);
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -384,6 +413,12 @@ footer,
     margin: 1rem 0;
 }
 
+.form-helper {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
 form input,
 form textarea {
     width: 100%;
@@ -471,6 +506,51 @@ form textarea {
 .projects-note {
     margin-top: 1rem;
     color: var(--muted-strong);
+}
+
+.project-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid var(--surface-border);
+    background-color: var(--surface-strong);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.project-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.45rem;
+}
+
+.project-card p {
+    margin-bottom: 0.6rem;
+}
+
+.project-meta {
+    color: var(--muted-strong);
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.project-link {
+    display: inline-block;
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.75rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.project-link:hover {
+    background-color: var(--button-bg);
+    color: var(--button-text);
 }
 
 .resume-content {
@@ -606,6 +686,11 @@ form textarea {
         justify-content: center;
         gap: 0.8rem;
         width: 100%;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        justify-content: center;
     }
 
     .resume-header {

@@ -9,9 +9,10 @@
     <script src="theme-toggle.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
-        <nav>
+        <nav aria-label="Primary">
             <div>
                 <div class="logo">Paul McClure</div>
                 <p class="site-tagline">Web developer &amp; Colorado State University Computer Science student</p>
@@ -21,7 +22,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html" class="active">Resume</a></li>
+                    <li><a href="resume.html" class="active" aria-current="page">Resume</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle high contrast mode">
@@ -32,7 +33,7 @@
         </nav>
     </header>
 
-    <main class="resume-content">
+    <main id="main-content" class="resume-content">
         <header class="resume-header">
             <h1 class="resume-title">Resume</h1>
             <a href="Paul_McClure_Resume_Bold_Professional.pdf" download="Paul_McClure_Resume_Bold_Professional.pdf" class="download-btn">Download PDF</a>
