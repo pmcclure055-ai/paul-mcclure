@@ -29,14 +29,11 @@ jobs:
           import re
           import sys
 
-          root = pathlib.Path("Paul-Portfolio")
-          if not root.exists():
-              print("ERROR: Paul-Portfolio directory not found")
-              sys.exit(1)
+          root = pathlib.Path(".")
 
           html_files = sorted(root.glob("*.html"))
           if not html_files:
-              print("ERROR: No HTML files found in Paul-Portfolio")
+              print("ERROR: No HTML files found in repository root")
               sys.exit(1)
 
           errors = []
@@ -80,9 +77,9 @@ jobs:
 
           css_file = root / "style.css"
           if not css_file.exists():
-              errors.append("Paul-Portfolio/style.css: file not found")
+              errors.append("style.css: file not found in repository root")
           elif not css_file.read_text(encoding="utf-8", errors="ignore").strip():
-              errors.append("Paul-Portfolio/style.css: file is empty")
+              errors.append("style.css: file is empty")
 
           if errors:
               print("Validation failed:")
@@ -109,7 +106,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Paul-Portfolio
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
