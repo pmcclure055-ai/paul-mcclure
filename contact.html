@@ -6,32 +6,12 @@
     <title>Contact | Paul McClure</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="shared-header.js" defer></script>
     <script src="theme-toggle.js" defer></script>
+    <script src="shared-footer.js" defer></script>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <header>
-        <nav aria-label="Primary">
-            <div>
-                <div class="logo">Paul McClure</div>
-                <p class="site-tagline">Web developer &amp; Colorado State University Computer Science student</p>
-            </div>
-            <div class="nav-controls">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
-                </ul>
-                <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle high contrast mode">
-                    <span class="theme-toggle-text">High Contrast</span>
-                    <span class="theme-toggle-state" aria-hidden="true">Off</span>
-                </button>
-            </div>
-        </nav>
-    </header>
+<body data-active-page="contact">
+    <header data-site-header></header>
 
     <main id="main-content" class="contact-page">
         <div class="contact-container">
@@ -39,9 +19,9 @@
             <section class="contact-column-text">
                 <h1>Contact Me</h1>
                 <div class="contact-details">
-                    <p><i class="fa fa-map-marker"></i> Fort Collins, Colorado</p>
-                    <p><i class="fa fa-phone"></i> Phone: (970) 501-9404</p>
-                    <p><i class="fa fa-envelope"></i> Email: pmcclure055@gmail.com</p>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Fort Collins, Colorado</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> Phone: (970) 501-9404</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> Email: pmcclure055@gmail.com</p>
                 </div>
 
                 <p class="form-instruction">Please fill out the form below to get in touch with me, and I will get back to you as soon as possible.</p>
@@ -58,7 +38,7 @@
                     <label for="contact-message" class="sr-only">Message</label>
                     <textarea id="contact-message" name="message" placeholder="Message" rows="5" required></textarea>
                     <button type="submit" class="send-btn">
-                        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> SEND MESSAGE
                     </button>
                 </form>
                 <p class="form-helper">This form is powered by FormSubmit. The first submission may require a quick email verification.</p>
@@ -70,17 +50,7 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Paul McClure. All rights reserved.</p>
-            <div class="contact-links">
-                <a href="mailto:pmcclure055@gmail.com">Email Me</a>
-                <a href="https://linkedin.com/in/pmcclure055" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/pmcclure055-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
-            <p class="disclaimer">I strive to keep all website content accurate and up to date, but I cannot guarantee that all information is completely current or error-free.</p>
-        </div>
-    </footer>
+    <footer data-site-footer></footer>
 
 </body>
 </html>

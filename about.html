@@ -6,32 +6,12 @@
     <title>About Me | Paul McClure</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="shared-header.js" defer></script>
     <script src="theme-toggle.js" defer></script>
+    <script src="shared-footer.js" defer></script>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <header>
-        <nav aria-label="Primary">
-            <div>
-                <div class="logo">Paul McClure</div>
-                <p class="site-tagline">Web developer &amp; Colorado State University Computer Science student</p>
-            </div>
-            <div class="nav-controls">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active" aria-current="page">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle high contrast mode">
-                    <span class="theme-toggle-text">High Contrast</span>
-                    <span class="theme-toggle-state" aria-hidden="true">Off</span>
-                </button>
-            </div>
-        </nav>
-    </header>
+<body data-active-page="about">
+    <header data-site-header></header>
     <main id="main-content" class="about-page">
         <div class="about-container">
             <section class="about-text">
@@ -69,16 +49,6 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Paul McClure. All rights reserved.</p>
-            <div class="contact-links">
-                <a href="mailto:pmcclure055@gmail.com">Email Me</a>
-                <a href="https://linkedin.com/in/pmcclure055" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/pmcclure055-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
-            <p class="disclaimer">I strive to keep all website content accurate and up to date, but I cannot guarantee that all information is completely current or error-free.</p>
-        </div>
-    </footer>
+    <footer data-site-footer></footer>
 </body>
 </html>

@@ -124,6 +124,9 @@ nav > div {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 0.3rem;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
 }
 
 .site-tagline {

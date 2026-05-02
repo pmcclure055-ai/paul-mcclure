@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "a11y: pa11y-ci all pages",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "set -euo pipefail; python3 -m http.server 4173 >/tmp/paul-site-a11y.log 2>&1 & SERVER_PID=$!; trap 'kill $SERVER_PID' EXIT; npx --yes pa11y-ci http://127.0.0.1:4173/index.html http://127.0.0.1:4173/about.html http://127.0.0.1:4173/projects.html http://127.0.0.1:4173/resume.html http://127.0.0.1:4173/contact.html"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
